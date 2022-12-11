@@ -53,7 +53,6 @@ describe('Unit Test', () => {
 
   test('Should all functions are working correctly', async () => {
     const result = await handlerUpdatedOutages(siteID)
-    expect(result).toBe(true)
     expect(spy.services.outages.get).toBeCalledTimes(1)
     expect(spy.services.siteInfo.get).toBeCalledTimes(1)
     expect(spy.services.siteInfo.get).toBeCalledWith(siteID)
@@ -61,5 +60,6 @@ describe('Unit Test', () => {
     expect(spy.filters.inconsequential).toBeCalledWith(mockOutages, mockSiteInfo)
     expect(spy.services.outages.send).toBeCalledTimes(1)
     expect(spy.services.outages.send).toBeCalledWith(mockEnhancedOutages, siteID)
+    expect(result).toBe(true)
   })
 })
