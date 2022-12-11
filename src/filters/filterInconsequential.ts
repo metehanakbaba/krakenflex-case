@@ -7,7 +7,7 @@ import { IEnhancedOutages, IOutage } from '~/src/types/services/IOutage'
  * @param outages {IOutage[]}
  * @param siteInfo {ISiteInfo}
  */
-export default function filterInconsequential(
+export function filterInconsequential(
   outages: IOutage[],
   siteInfo: ISiteInfo
 ): IEnhancedOutages[] {
@@ -28,3 +28,5 @@ export default function filterInconsequential(
     return true
   })
 }
+
+export default filterInconsequential

@@ -24,7 +24,8 @@ export async function getOutages(): Promise<IOutage[]> {
  * @param siteID {ISiteID}
  * @return Promise<void>
  */
-export async function sendOutages(outages: IEnhancedOutages[], siteID: ISiteID): Promise<void> {
+export async function sendOutages(outages: IEnhancedOutages[], siteID: ISiteID): Promise<boolean> {
   await service.post(`/site-outages/${siteID}`, outages)
   console.info('Successfully processed request.')
+  return true
 }

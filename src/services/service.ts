@@ -1,11 +1,12 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
+import env from "~/src/env"
 
 const onRequest = (config: AxiosRequestConfig): AxiosRequestConfig => ({
     ...config,
-    baseURL: process.env.API_BASE_URL,
+    baseURL: env.API_BASE_URL,
     data: config.data as string,
     headers: {
-      'x-api-key': process.env.API_KEY,
+      'x-api-key': env.API_KEY,
       'accept': 'application/json',
     }
   })

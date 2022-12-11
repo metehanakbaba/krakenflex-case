@@ -10,7 +10,9 @@ import { ISiteInfo } from '~/src/types/services/ISiteInfo'
  * @param siteId {ISiteID}
  * @return Promise<ISiteInfo>
  */
-export default async function getSiteInfo(siteId: ISiteID): Promise<ISiteInfo> {
+export async function getSiteInfo(siteId: ISiteID): Promise<ISiteInfo> {
   const { data } = await service.get(`/site-info/${siteId}`)
   return data as ISiteInfo
 }
+
+export default getSiteInfo

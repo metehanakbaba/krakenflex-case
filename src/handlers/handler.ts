@@ -1,4 +1,4 @@
-import handlerErrors from '~/src/handlers/app/handlerErrors'
+import { handlerErrors } from '~/src/handlers/app/handlerErrors'
 import { ErrorType, ServerErrorCode } from '~/src/types/app/IErrors'
 
 /**
@@ -6,8 +6,8 @@ import { ErrorType, ServerErrorCode } from '~/src/types/app/IErrors'
  *
  * @param callback {Promise<void>[]} Multiple site ids can be sent somehow in the iterator
  */
-export default function handler(...callback: Promise<void>[]): void {
-  callback.forEach(_ => {
+export default function handler(...callback: Promise<boolean>[]): void {
+  return callback.forEach(_ => {
     _.catch(
       handlerErrors(e => {
         switch (e.type) {

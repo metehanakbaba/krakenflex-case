@@ -6,7 +6,7 @@ import { ErrorType, IAxiosError, IStockError } from '~/src/types/app/IErrors'
  *
  * @param callback {(err: IAxiosError<T> | IStockError<T>)}
  */
-export default function handlerErrors<T>(callback: (err: IAxiosError<T> | IStockError<T>) => void) {
+export function handlerErrors<T>(callback: (err: IAxiosError<T> | IStockError<T>) => void) {
   return (error: Error | AxiosErrorGenerics<T>): void => {
     if (axios.isAxiosError(error)) {
       callback({
@@ -21,3 +21,5 @@ export default function handlerErrors<T>(callback: (err: IAxiosError<T> | IStock
     }
   }
 }
+
+export default handlerErrors
