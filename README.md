@@ -22,7 +22,7 @@
 - Directory schema set up at `app level` and `service level`
 - Initialized `.env`
 
-####NOTE:
+###NOTE:
 `Actually, instead of functional programming, the case problem can be solved by oop and generating a single class instance.`
 
 ## Install
