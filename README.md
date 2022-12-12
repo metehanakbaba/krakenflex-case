@@ -21,6 +21,11 @@
 - Developed according to the `SOLID` principle
 - Directory schema set up at `app level` and `service level`
 - Initialized `.env`
+- `Prettier:` A formatter for our code, which helps us to follow a certain code style.
+- `ts-node:` Is a TypeScript execution engine for Node.js, it JIT (just in time) transforms TypeScript code to JavaScript allowing us to use TypeScript without pre-compiling our code and includes other bunch of useful features.
+- `tsconfig-paths:` TypeScript accepts arbitrary paths in our tsconfig.json which can replace relative routes in our code, however if we try to run our files with node or ts-node, the modules won't be found, this package helps us to load those modules.
+- `eslint-config-prettier:` Turns off all the unnecessary rules or the ones that might conflict with Prettier.
+- `ESLint:` Is a utility who helps us to find and fix errors in our code. Due to the fact that JavaScript is a loosely-typed language there is more probability we introduce errors.
 
 ## NOTE:
 `Actually, instead of functional programming, the case problem can be solved by oop and generating a single class instance.`
